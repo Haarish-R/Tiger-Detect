@@ -1,3 +1,4 @@
+#Importing the necessary libraries
 from gluoncv.data.base import VisionDataset
 import os
 import warnings
@@ -13,9 +14,11 @@ from gluoncv.data.transforms.bbox import *
 from mxnet import np,nd
 from mxnet.gluon.data import DataLoader
 
+#mean and standard deviation from Imagenet statistics
 mean=np.array([0.485, 0.456, 0.406]).reshape(3,1,1)
 std=np.array([0.229, 0.224, 0.225]).reshape(3,1,1)
 
+#Defining the class
 class TigerDetection(VisionDataset):
     CLASSES = ['tiger']
 
